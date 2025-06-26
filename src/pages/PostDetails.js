@@ -7,7 +7,8 @@ function PostDetails() {
   const post = useSelector((state) =>
     state.posts.posts.find((p) => p.id === parseInt(id))
   );
-
+  
+  
   if (!post) {
     return (
       <div className="p-6">
@@ -17,13 +18,15 @@ function PostDetails() {
   }
 
   return (
-    <div className="p-6 max-w-3xl mx-auto space-y-4">
+    <div className="p-6 max-w-3xl mx-auto space-y-4 bg-blue-50 shadow-md rounded-xl mt-6">
+
       <button
         onClick={() => navigate(-1)}
         className="text-sm text-blue-600 hover:underline"
       >
         ← Back to Posts
       </button>
+      
       <h1 className="text-4xl font-bold text-blue-800">{post.title}</h1>
       <p className="text-gray-700 text-lg leading-relaxed">{post.body}</p>
     </div>
